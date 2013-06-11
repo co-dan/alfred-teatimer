@@ -32,14 +32,22 @@ class TimeInterval
   end
 end
 
+def str_to_time s
+  if s.nil?
+    return 0
+  else
+    return s[0..-2] # remove trailing 's' or 'm'
+  end
+end  
+
 # Parse time in format 1m 2s
 def parse_time2(s)
-  mtch = /((\d)+m)?(\s*)((\d)+s)?/.match s
+  mtch = /(\d+m)?(\s*)(\d+s)?/.match s
   if mtch.nil?
     return TimeInterval.bad_format
   else
     t = mtch.to_a
-    return TimeInterval.new(t[2], t[5])
+    return TimeInterval.new(str_to_time(t[1]), str_to_time(t[3]))
   end
 end  
 # Parse time in format 1:2
@@ -64,8 +72,8 @@ xml = "<?xml version=\"1.0\"?>\n<items>\n"
 #xml += "<item arg=\"\"><title>|#{interval}|</title></item>"
 begin
   xml += parse_time(interval).to_s
-rescue
-  xml += TimeInterval.bad_format.to_s
+# rescue
+#   xml += TimeInterval.bad_format.to_s
 end  
 xml += "</items>"
 puts xml
