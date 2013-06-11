@@ -22,7 +22,7 @@ There are various formats you can use for starting a timer
 ![Timer format 2](https://raw.github.com/co-dan/alfred-teatimer/master/TimerFormat2.png)
 ![Timer format 3](https://raw.github.com/co-dan/alfred-teatimer/master/TimerFormat3.png)
 
-![Timer has started](https://raw.github.com/co-dan/alfred-teatimer/master/TimerStared.png)
+![Timer has started](https://raw.github.com/co-dan/alfred-teatimer/master/TimerStarted.png)
 ![Timer has finished (sticky)](https://raw.github.com/co-dan/alfred-teatimer/master/TimerFinished.png)
 
 # Future work
