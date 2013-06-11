@@ -61,7 +61,7 @@
 				<key>sticky</key>
 				<false/>
 				<key>text</key>
-				<string>Timer for {query} has started</string>
+				<string>Timer for {query} seconds has started</string>
 				<key>title</key>
 				<string>Timer started</string>
 			</dict>
@@ -78,14 +78,14 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>126</integer>
 				<key>keyword</key>
 				<string>tea</string>
 				<key>runningsubtext</key>
 				<string>...</string>
 				<key>script</key>
 				<string>#!/bin/bash
-/usr/bin/ruby timer.rb {query}
+/usr/bin/ruby timer.rb "{query}"
 </string>
 				<key>title</key>
 				<string>Tea timer</string>
@@ -113,7 +113,9 @@
 				<key>removeextension</key>
 				<false/>
 				<key>sticky</key>
-				<false/>
+				<true/>
+				<key>text</key>
+				<string>{query}</string>
 				<key>title</key>
 				<string>Timer finished</string>
 			</dict>

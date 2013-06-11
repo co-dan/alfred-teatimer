@@ -32,7 +32,16 @@ class TimeInterval
   end
 end
 
-
+# Parse time in format 1m 2s
+def parse_time2(s)
+  mtch = /((\d)+m)?(\s*)((\d)+s)?/.match s
+  if mtch.nil?
+    return TimeInterval.bad_format
+  else
+    t = mtch.to_a
+    return TimeInterval.new(t[2], t[5])
+  end
+end  
 # Parse time in format 1:2
 def parse_time(s)
   times = s.split ":"
@@ -41,8 +50,8 @@ def parse_time(s)
   elsif times.size == 1 then
     begin
       r = TimeInterval.new(times[0], 0)
-    # rescue ArgumentError => e
-    #  parse_time2 s
+    rescue ArgumentError => e
+      r = parse_time2 s
     end
   else
     raise "Unknown format"
@@ -52,6 +61,7 @@ end
 
 interval = ARGV.join ' '
 xml = "<?xml version=\"1.0\"?>\n<items>\n"
+#xml += "<item arg=\"\"><title>|#{interval}|</title></item>"
 begin
   xml += parse_time(interval).to_s
 rescue
