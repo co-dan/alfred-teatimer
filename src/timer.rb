@@ -1,5 +1,4 @@
 # TODO: Create a special exception
-# TODO: Better time parsing
 # TODO: Database of teas
 
 require 'time'
