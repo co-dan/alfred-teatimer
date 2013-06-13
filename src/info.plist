@@ -130,13 +130,12 @@
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>118</integer>
 				<key>script</key>
-				<string>#!/bin/bash
-sleep {query}
-echo "Timer done!"</string>
+				<string>sleep ({query})
+puts "Timer done!"</string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>2</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
